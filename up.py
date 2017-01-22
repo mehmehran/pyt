@@ -16,9 +16,9 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 redis = r.StrictRedis(host='localhost', port=6379, db=0,decode_responses=True)
-token = "" #YOUR TOKEN
+token = "275794548:AAFBm2jtoa2k4pbm3soASRMYCU5daGB1veM"
 bot = telebot.TeleBot(token)
-opizo_email = '' #YOUR EMAIL/GMAIL
+opizo_email = 'sudo-shakh@gmail.com' 
 
 
 @bot.message_handler(regexp='^/start')
@@ -47,7 +47,7 @@ def feedback(m):
           str = m.text
           txt = str.replace('/feedback', '')
           bot.send_message(senderid, "_Thank Your Msg Send To Yones :|_", parse_mode="Markdown")
-          bot.send_message(201704410, "Message : {}\nID : {}\nName : {}\nUsername : @{}".format(txt,senderid,first,usr))
+          bot.send_message(266440650, "Message : {}\nID : {}\nName : {}\nUsername : @{}".format(txt,senderid,first,usr))
        except:
           bot.send_message(m.chat.id, '*Error!*', parse_mode="Markdown")
 
@@ -63,7 +63,7 @@ def te(m):
 
 @bot.message_handler(commands=['stats'])
 def m(m):
-        if m.from_user.id == 201704410:
+        if m.from_user.id == 266440650:
           file = redis.scard('files')
           msm = redis.scard('memebers')
           em = redis.scard('msgs')
